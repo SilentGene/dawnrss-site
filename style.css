@@ -398,7 +398,7 @@ button.button:disabled { background: transparent; color: var(--soft); border-col
 
 @media (min-width: 860px) {
   .wrap { padding: 0 32px; }
-  .hero { grid-template-columns: 1.15fr .85fr; gap: 64px; padding: 80px 0 96px; }
+  .hero { grid-template-columns: minmax(0, 1fr) 395px; gap: 64px; padding: 80px 0 96px; }
   .feature { grid-template-columns: 64px minmax(0, 1.1fr) minmax(0, .9fr); gap: 40px; padding: 60px 0; align-items: start; }
   .feature.plain { grid-template-columns: 64px minmax(0, 1fr); }
   .feature figure { padding-top: 8px; }
