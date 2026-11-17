@@ -282,9 +282,9 @@ figcaption { font: 12px var(--sans); color: var(--soft); margin-top: 10px; text-
 .masthead-strip .count { color: var(--ink); font-weight: 700; margin-left: 12px; }
 .masthead-strip .i { margin-left: 19px; color: var(--ink); }
 .app .rules { margin: 0 20px; height: 5px; border-top: 2px solid var(--ink); border-bottom: .5px solid var(--ink); }
-.day { display: flex; align-items: center; padding: 26px 0 4px; }
-.day::before, .day::after { content: ""; flex: 1; border-top: 1px solid var(--rule); }
-.day span {
+.day-head { display: flex; align-items: center; padding: 26px 0 4px; }
+.day-head::before, .day-head::after { content: ""; flex: 1; border-top: 1px solid var(--rule); }
+.day-head span {
   padding: 0 14px;
   font: 700 11px var(--sans);
   letter-spacing: 1.2px;
