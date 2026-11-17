@@ -219,7 +219,9 @@ figcaption { font: 12px var(--sans); color: var(--soft); margin-top: 10px; text-
   border-bottom: 1px solid var(--rule);
   flex: none;
 }
-.appbar h3 { flex: 1; margin: 0; font: 400 15px/1.33 var(--serif); }
+/* Regular weight on the phone (Noto Serif CJK), which is darker than the
+   desktop serifs; a hairline stroke brings them to the same colour. */
+.appbar h3 { flex: 1; margin: 0; font: 400 15px/1.33 var(--serif); -webkit-text-stroke: .7px currentColor; }
 .appbar .act { width: 48px; height: 48px; display: grid; place-items: center; }
 .list { flex: 1; overflow: hidden; }
 .masthead-strip {
