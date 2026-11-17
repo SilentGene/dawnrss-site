@@ -17,13 +17,17 @@
 <link rel="icon" href="favicon.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
 </head>
 <body>
 <div class="wrap">
 
 <header class="masthead">
   <a class="brand" href="zh-Hant.html"><svg viewBox="0 0 100 63" aria-hidden="true"><path d="M14 36a36 36 0 0 1 72 0z"/><rect y="36" width="100" height="4.5"/><rect x="14" y="49" width="72" height="2.7"/><rect x="28" y="60.2" width="44" height="2.7"/></svg><span>朝聞道RSS</span></a>
-  <nav class="langs" aria-label="Language"><a href="index.html" lang="en" hreflang="en" onclick="try{localStorage.setItem('lang',this.lang)}catch(e){}">English</a><a href="zh.html" lang="zh-Hans" hreflang="zh-Hans" onclick="try{localStorage.setItem('lang',this.lang)}catch(e){}">简体中文</a><a href="zh-Hant.html" lang="zh-Hant" hreflang="zh-Hant" onclick="try{localStorage.setItem('lang',this.lang)}catch(e){}" aria-current="page">繁體中文</a></nav>
+  <div class="tools">
+    <nav class="langs" aria-label="Language"><a href="index.html" lang="en" hreflang="en" onclick="try{localStorage.setItem('lang',this.lang)}catch(e){}">English</a><a href="zh.html" lang="zh-Hans" hreflang="zh-Hans" onclick="try{localStorage.setItem('lang',this.lang)}catch(e){}">简体中文</a><a href="zh-Hant.html" lang="zh-Hant" hreflang="zh-Hant" onclick="try{localStorage.setItem('lang',this.lang)}catch(e){}" aria-current="page">繁體中文</a></nav>
+    <button class="theme-toggle" type="button" title="切換淺色 / 深色" aria-label="切換淺色 / 深色" onclick="dawnToggleTheme()"><svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.3 22c5.2 0 9.4-3.9 9.9-8.9-1.2 1.4-3 2.3-5 2.3-3.7 0-6.6-3-6.6-6.6 0-2.9 1.8-5.4 4.4-6.3-.9-.3-1.8-.5-2.7-.5C6.9 2 2.5 6.5 2.5 12s4.4 10 9.8 10z"/></svg><svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 1.8v2.6M12 19.6v2.6M1.8 12h2.6M19.6 12h2.6M4.8 4.8l1.8 1.8M17.4 17.4l1.8 1.8M4.8 19.2l1.8-1.8M17.4 6.6l1.8-1.8"/></g></svg></button>
+  </div>
 </header>
 <hr class="double-rule">
 
@@ -45,8 +49,8 @@
 
 <section class="feature"><div class="num">01</div><div><h2>紙與墨</h2><p>介面只有紙色、墨色和一檔灰。顏色不承載任何含義——已讀與未讀靠字重區分，段落之間只有細線和留白。</p><ul><li>標題與內文用襯線體，行寬適合閱讀</li><li>明、暗兩套主題；字級可調</li><li>手機、平板、摺疊螢幕都適配；寬螢幕上列表與內文並排</li><li>繁體中文、简体中文、English</li></ul></div><figure><div class="swatches"><div class="day"><small>日</small>紙上的墨。</div><div class="night"><small>夜</small>夜裡的粉筆。</div></div><figcaption>日與夜</figcaption></figure></section>
 <section class="feature plain"><div class="num">02</div><div><h2>訂閱，不折騰</h2><p>貼上訂閱網址即可；只知道網站網址也行，朝聞道RSS 會自己找到訂閱源。訂閱列表始終屬於你：可用 OPML 匯入、匯出。</p><ul><li>支援 RSS 2.0、Atom、RSS 1.0 與 JSON Feed</li><li>分組、重新命名，按訂閱源或分組檢視</li><li>滑動標記已讀或收藏；也可以開啟「捲動經過即已讀」</li><li>取消訂閱時，可以把收藏過的文章留下</li></ul></div></section>
-<section class="feature"><div class="num">03</div><div><h2>五支螢光筆</h2><p>告訴它你關心的詞，各配一支筆。標題、摘要和內文裡出現時都會被劃出來——這是應用程式裡唯一有顏色的地方，因為那是你自己留下的記號。</p><ul><li>黃、綠、粉、藍、橙五種顏色</li><li>關鍵詞在摘要靠後的位置時，摘要會直接跳到那一句</li><li>可選「整詞比對」，讓 RNA 不再命中 mRNA</li></ul></div><figure><div class="plate"><div class="pens"><mark class="p1">古菌</mark><mark class="p2">排版</mark><mark class="p3">RSS</mark><mark class="p4">開源</mark><mark class="p5">冰島</mark></div><p>一種新的<mark class="p1">古菌</mark>，一篇談<mark class="p2">排版</mark>的長文，以及 <mark class="p3">RSS</mark> 對<mark class="p4">開源</mark>社群為何依然重要。</p></div><figcaption>關鍵詞在列表和內文裡被劃出</figcaption></figure></section>
-<section class="feature"><div class="num">04</div><div><h2>用你自己的 AI 翻譯和寫簡報</h2><p>接上你已有的 AI 服務，朝聞道RSS 就能翻譯外文訂閱，並為新到的文章寫一段「編者按」。</p><ul><li>支援 OpenAI 相容介面、Claude 和 DeepL；金鑰只存在系統的安全儲存區裡</li><li>同步時自動翻譯標題和摘要，也可以翻譯整篇內文</li><li>同步簡報、日報、週報，文中的編號可點開對應文章</li><li>自動翻譯多少、總結多少，上限由你來定</li></ul></div><figure><div class="plate"><div class="label note-head">編者按 · 日報</div><div class="note-title">十一月十七日</div><p>今天的 23 篇文章裡，最值得讀的是深海古菌的新發現<sup>[1]</sup>，它為「生命起源於熱泉」的假說又添了一份證據<sup>[2]</sup>。設計方面，一篇談行寬與留白的長文<sup>[3]</sup>值得慢讀。</p></div><figcaption>一份日報；點數字可打開對應文章</figcaption></figure></section>
+<section class="feature"><div class="num">03</div><div><h2>五支螢光筆</h2><p>告訴它你關心的詞，各配一支筆。標題、摘要和內文裡出現時都會被劃出來——這是應用程式裡唯一有顏色的地方，因為那是你自己留下的記號。</p><ul><li>黃、綠、粉、藍、橙五種顏色</li><li>關鍵詞在摘要靠後的位置時，摘要會直接跳到那一句</li><li>可選「整詞比對」，讓 RNA 不再命中 mRNA</li></ul></div><figure><div class="plate"><div class="pens"><mark class="p1">睡眠</mark><mark class="p2">排版</mark><mark class="p3">咖啡</mark><mark class="p4">旅行</mark><mark class="p5">冰島</mark></div><p>關於<mark class="p1">睡眠</mark>的新研究，一篇談<mark class="p2">排版</mark>的長文，以及<mark class="p3">咖啡</mark>到底該幾點喝。</p></div><figcaption>關鍵詞在列表和內文裡被劃出</figcaption></figure></section>
+<section class="feature"><div class="num">04</div><div><h2>用你自己的 AI 翻譯和寫簡報</h2><p>接上你已有的 AI 服務，朝聞道RSS 就能翻譯外文訂閱，並為新到的文章寫一段「編者按」。</p><ul><li>支援 OpenAI 相容介面、Claude 和 DeepL；金鑰只存在系統的安全儲存區裡</li><li>同步時自動翻譯標題和摘要，也可以翻譯整篇內文</li><li>同步簡報、日報、週報，文中的編號可點開對應文章</li><li>自動翻譯多少、總結多少，上限由你來定</li></ul></div><figure><div class="plate"><div class="label note-head">編者按 · 日報</div><div class="note-title">十一月十七日</div><p>今天的 23 篇文章裡，最值得讀的是一項關於睡眠的研究<sup>[1]</sup>：每晚多睡一小時，白天的狀態明顯更好<sup>[2]</sup>。設計方面，一篇談行寬與留白的長文<sup>[3]</sup>值得慢讀。</p></div><figcaption>一份日報；點數字可打開對應文章</figcaption></figure></section>
 <section class="feature plain"><div class="num">05</div><div><h2>本機優先，預設私密</h2><p>不註冊就能完整使用，此時資料只在你的裝置上。沒有廣告，沒有統計，沒有追蹤程式碼。</p><ul><li>可備份到你自己的 WebDAV 伺服器，並從中還原</li><li>帳號是可選的：用來在多台裝置間同步訂閱列表和收藏文章</li><li>隨時可以在應用程式內刪除帳號</li></ul></div></section>
 <section class="feature plain"><div class="num">06</div><div><h2>想要更多，有 Pro</h2><p>閱讀、訂閱、關鍵詞、備份，以及用自己金鑰的 AI 功能都是免費的。可選的 Pro 月度會員，提供那些需要伺服器成本的功能。</p><ul><li>官方 AI：翻譯和簡報開箱即用，不需要 API 金鑰</li><li>朗讀：自然的雲端聲音</li><li>每日日報：在你指定的時間準備好</li><li>背景定時同步；文章永久保留（免費版未收藏的文章保留六個月）</li></ul></div></section>
 

@@ -23,8 +23,11 @@
     "Microsoft JhengHei", "Noto Sans CJK TC", sans-serif;
 }
 
+/* Dark follows the system unless the reader picked a theme with the
+   toggle (stored as data-theme on <html>). */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
     --paper: #121212;
     --paper-dim: #1C1C1C;
     --ink: #E6E1D6;
@@ -33,6 +36,16 @@
     --pen-mix: 42%;
   }
 }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #121212;
+  --paper-dim: #1C1C1C;
+  --ink: #E6E1D6;
+  --soft: #9A958A;
+  --rule: #2E2E2E;
+  --pen-mix: 42%;
+}
+:root[data-theme="light"] { color-scheme: light; }
 
 * { box-sizing: border-box; }
 
@@ -79,6 +92,27 @@ a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 .langs a { text-decoration: none; }
 .langs a:hover { text-decoration: underline; }
 .langs [aria-current] { color: var(--ink); font-weight: 600; }
+.tools { display: flex; align-items: center; gap: 18px; }
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-right: -6px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+.theme-toggle svg { width: 20px; height: 20px; fill: currentColor; }
+.theme-toggle .sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .theme-toggle .sun { display: block; }
+  :root:not([data-theme]) .theme-toggle .moon { display: none; }
+}
 
 /* The app's list header: one thick rule over one thin. */
 .double-rule {
@@ -144,7 +178,7 @@ figcaption { font: 12px var(--sans); color: var(--soft); margin-top: 10px; text-
    1 dp), so sizes match the Flutter widgets. Follows the page's theme. */
 .phone {
   width: 100%;
-  max-width: 380px;
+  max-width: 395px;
   margin: 0 auto;
   padding: 10px;
   background: #0E0E0E;
@@ -170,21 +204,21 @@ figcaption { font: 12px var(--sans); color: var(--soft); margin-top: 10px; text-
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 34px;
-  padding: 6px 26px 0 30px;
-  font: 600 13px var(--sans);
+  height: 44px;
+  padding: 4px 26px 0 32px;
+  font: 600 15px var(--sans);
 }
 .sb-icons { display: flex; gap: 6px; align-items: center; }
 .sb-icons svg { fill: currentColor; }
 .appbar {
   display: flex;
   align-items: center;
-  height: 64px;
-  padding: 0 4px 0 16px;
+  height: 56px;
+  padding: 0 0 0 16px;
   border-bottom: 1px solid var(--rule);
   flex: none;
 }
-.appbar h3 { flex: 1; margin: 0; font: 700 24px/1.33 var(--serif); }
+.appbar h3 { flex: 1; margin: 0; font: 400 15px/1.33 var(--serif); }
 .appbar .act { width: 48px; height: 48px; display: grid; place-items: center; }
 .list { flex: 1; overflow: hidden; }
 .masthead-strip {
@@ -254,7 +288,6 @@ figcaption { font: 12px var(--sans); color: var(--soft); margin-top: 10px; text-
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   height: 64px;
-  border-top: 1px solid var(--rule);
   background: var(--paper);
 }
 .navbar span {
@@ -262,14 +295,14 @@ figcaption { font: 12px var(--sans); color: var(--soft); margin-top: 10px; text-
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 8px;
   color: var(--soft);
 }
 .navbar b { font: 400 12px/16px var(--sans); }
 .navbar .on { color: var(--ink); }
 .navbar .on b { font-weight: 700; }
-.gesture { flex: none; height: 22px; display: grid; place-items: center; }
-.gesture::before { content: ""; width: 108px; height: 4px; border-radius: 2px; background: var(--ink); opacity: .85; }
+.gesture { flex: none; height: 24px; display: grid; place-items: center; }
+.gesture::before { content: ""; width: 120px; height: 4px; border-radius: 2px; background: var(--soft); opacity: .8; }
 
 mark {
   color: inherit;
