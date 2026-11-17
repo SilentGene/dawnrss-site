@@ -10,6 +10,12 @@
   if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     root.classList.add('motion');
   }
+  // The language menu closes when the reader clicks anywhere else.
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('details.lang-menu[open]').forEach(function (d) {
+      if (!d.contains(e.target)) d.removeAttribute('open');
+    });
+  });
   // The new theme spreads out from the button like a drop of ink on paper
   // (View Transitions where the browser has them; an instant switch elsewhere).
   window.dawnToggleTheme = function (button) {
