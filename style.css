@@ -188,9 +188,8 @@ figcaption { font: 12px var(--sans); color: var(--soft); margin-top: 10px; text-
 }
 .app {
   position: relative;
-  height: 760px;
-  max-height: 82vh;
-  min-height: 600px;
+  /* The phone's own screen proportions (1220 × 2656 px). */
+  aspect-ratio: 1220 / 2656;
   display: flex;
   flex-direction: column;
   overflow: hidden;
