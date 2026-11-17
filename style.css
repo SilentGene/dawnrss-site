@@ -308,8 +308,9 @@ figcaption { font: 12px var(--sans); color: var(--soft); margin-top: 10px; text-
 .gesture::before { content: ""; width: 120px; height: 4px; border-radius: 2px; background: var(--soft); opacity: .8; }
 
 mark {
+  --ink-pen: color-mix(in srgb, var(--pen) var(--pen-mix), var(--paper));
   color: inherit;
-  background: color-mix(in srgb, var(--pen) var(--pen-mix), var(--paper));
+  background: linear-gradient(var(--ink-pen), var(--ink-pen)) no-repeat 0 0 / 100% 100%;
   padding: 0 .12em;
 }
 .p1 { --pen: #FFE433; }
@@ -409,3 +410,41 @@ button.button:disabled { background: transparent; color: var(--soft); border-col
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+/* ---------- motion (only with html.motion, set by theme.js) ---------- */
+
+/* The emblem: rules draw out from the centre, then the sun rises over them. */
+.motion .emblem .rule {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: rule-draw .9s cubic-bezier(.6, 0, .2, 1) both;
+}
+.motion .emblem .r1 { animation-delay: .12s; }
+.motion .emblem .r2 { animation-delay: .24s; }
+.motion .emblem .sun { animation: sunrise 1.9s cubic-bezier(.2, .75, .25, 1) .45s both; }
+.motion .closing .emblem:not(.in) * { animation-play-state: paused; }
+@keyframes rule-draw { from { transform: scaleX(0); } }
+@keyframes sunrise { from { transform: translateY(40px); } }
+
+/* Marks: the pen is drawn across the word, left to right. */
+.motion mark {
+  background-size: 0% 100%;
+  transition: background-size .55s cubic-bezier(.55, 0, .25, 1);
+}
+.motion mark.in { background-size: 100% 100%; }
+
+/* The phone syncs: the icon turns once, a new article slides in. */
+.incoming { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .6s cubic-bezier(.3, .7, .2, 1); }
+.incoming > div { overflow: hidden; min-height: 0; }
+.incoming .row { opacity: 0; transform: translateY(-8px); transition: opacity .5s .3s, transform .5s .3s; }
+html:not(.motion) .incoming { display: none; }
+.arrived .incoming { grid-template-rows: 1fr; }
+.arrived .incoming .row { opacity: 1; transform: none; }
+.syncing .sync .i { animation: sync-turn .9s cubic-bezier(.45, 0, .25, 1); }
+@keyframes sync-turn { to { transform: rotate(-360deg); } }
+
+/* Theme switch: the new page spreads out over the old one (theme.js). */
+::view-transition-old(root),
+::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+.ink-switch::view-transition-new(root) { z-index: 1; }
+
