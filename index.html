@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DawnRSS — a quiet, book-like RSS reader</title>
+<meta name="description" content="DawnRSS is an RSS reader that feels like a book: paper and ink, serif type, no feed noise. Local-first, with optional AI translation and briefings.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DawnRSS — a quiet, book-like RSS reader">
+<meta property="og:description" content="DawnRSS is an RSS reader that feels like a book: paper and ink, serif type, no feed noise. Local-first, with optional AI translation and briefings.">
+<meta name="theme-color" content="#F7F4EC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+<link rel="alternate" hreflang="en" href="index.html">
+<link rel="alternate" hreflang="zh-Hans" href="zh.html">
+<link rel="alternate" hreflang="zh-Hant" href="zh-Hant.html">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+<script>
+(function () {
+  try {
+    if (localStorage.getItem('lang')) return;
+    var l = (navigator.language || '').toLowerCase();
+    if (l.indexOf('zh') !== 0) return;
+    var hant = /hant|tw|hk|mo/.test(l);
+    location.replace(hant ? 'zh-Hant.html' : 'zh.html');
+  } catch (e) {}
+})();
+</script>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <a class="brand" href="index.html"><svg viewBox="0 0 100 63" aria-hidden="true"><path d="M14 36a36 36 0 0 1 72 0z"/><rect y="36" width="100" height="4.5"/><rect x="14" y="49" width="72" height="2.7"/><rect x="28" y="60.2" width="44" height="2.7"/></svg><span>DawnRSS</span></a>
+  <nav class="langs" aria-label="Language"><a href="index.html" lang="en" hreflang="en" onclick="try{localStorage.setItem('lang',this.lang)}catch(e){}" aria-current="page">English</a><a href="zh.html" lang="zh-Hans" hreflang="zh-Hans" onclick="try{localStorage.setItem('lang',this.lang)}catch(e){}">简体中文</a><a href="zh-Hant.html" lang="zh-Hant" hreflang="zh-Hant" onclick="try{localStorage.setItem('lang',this.lang)}catch(e){}">繁體中文</a></nav>
+</header>
+<hr class="double-rule">
+
+<main>
+<section class="hero">
+  <div>
+    <div class="label">RSS reader · Android · iOS · Web</div>
+    <h1>DawnRSS</h1>
+    <p class="lede">Read your feeds the way you read a book.</p>
+    <p class="sub">Paper, ink, serif type and hairlines. No timeline, no recommendations, no ads — only the articles you subscribed to.</p>
+    <div class="actions"><span class="button">Google Play — coming soon</span><a class="more" href="#contents">See what it does ↓</a></div>
+    <blockquote class="epigraph">“Having heard the Way in the morning, one may die content in the evening.”<cite>Confucius, Analects 4.8 — where the Chinese name 朝闻道 comes from</cite></blockquote>
+  </div>
+  <figure><div class="screen" role="img" aria-label="The Unread list"><div class="head"><span>Tuesday, 17 November</span><span>12 unread · Mark all read</span></div><hr class="double-rule"><div class="row"><div class="meta">Morning Science · 2h</div><div class="title">An archaeon found beside a deep-sea vent redraws the origin of life</div><div class="summary">Collected two thousand metres down, the new <mark class="p1">archaeon</mark> runs on a metabolism nobody had seen before.</div></div><div class="row"><div class="meta">Design Notes · 4h</div><div class="title">Why good typography keeps people reading</div><div class="summary">Measure, leading and white space are not decoration; they are the rhythm of <mark class="p2">reading</mark> itself.</div></div><div class="row read"><div class="meta">Letters from Afar · Yesterday</div><div class="title">In a small Icelandic town, the library keeps its lights on all night</div></div><div class="row"><div class="meta">Open Source Weekly · Yesterday</div><div class="title">The project one person has maintained for fifteen years</div></div><div class="tabs"><span class="on">Unread</span><span>Starred</span><span>All</span><span>Feeds</span></div></div><figcaption>The Unread list</figcaption></figure>
+</section>
+
+<hr class="double-rule" id="contents">
+<div class="section-head label"><span>Contents</span><span>01 — 06</span></div>
+
+<section class="feature"><div class="num">01</div><div><h2>Paper and ink</h2><p>The interface is monochrome: a paper colour, an ink colour and one grey. Colour never carries meaning — read and unread are told apart by weight, sections by hairlines and white space.</p><ul><li>Serif type for titles and text, at a comfortable measure</li><li>Light and dark themes; adjustable text size</li><li>Phones, tablets and foldables; list and article side by side on wide screens</li><li>English, 简体中文 and 繁體中文</li></ul></div><figure><div class="swatches"><div class="day"><small>Day</small>Ink on paper.</div><div class="night"><small>Night</small>Chalk on night.</div></div><figcaption>Day and night</figcaption></figure></section>
+<section class="feature plain"><div class="num">02</div><div><h2>Subscriptions, without fuss</h2><p>Paste a feed address — or just a website, and DawnRSS finds its feeds. Your subscriptions stay yours: they import and export as OPML.</p><ul><li>RSS 2.0, Atom, RSS 1.0 and JSON Feed</li><li>Groups, renaming, per-feed and per-group views</li><li>Swipe to mark read or to star; optionally mark read as you scroll past</li><li>Starred articles can outlive the subscription they came from</li></ul></div></section>
+<section class="feature"><div class="num">03</div><div><h2>Five highlighter pens</h2><p>Tell DawnRSS the words you care about and give each a pen. They are marked in headlines, summaries and article text — the one place the app uses colour, because the marks are yours.</p><ul><li>Yellow, green, pink, blue and orange</li><li>When the keyword sits deep in a summary, the summary jumps to that sentence</li><li>Whole-word matching, so “RNA” need not light up “mRNA”</li></ul></div><figure><div class="plate"><div class="pens"><mark class="p1">archaea</mark><mark class="p2">typography</mark><mark class="p3">RSS</mark><mark class="p4">open source</mark><mark class="p5">Iceland</mark></div><p>A new <mark class="p1">archaea</mark> lineage, a long essay on <mark class="p2">typography</mark>, and why <mark class="p3">RSS</mark> still matters to <mark class="p4">open source</mark>.</p></div><figcaption>Keywords, marked in the list and in the article</figcaption></figure></section>
+<section class="feature"><div class="num">04</div><div><h2>Translation and briefings, with your own AI</h2><p>Connect a service you already have and DawnRSS translates foreign feeds and writes you an editor’s note about what just arrived.</p><ul><li>Works with OpenAI-compatible APIs, Claude and DeepL — your key stays in the system keystore</li><li>Translate titles and summaries on sync, or a whole article on demand</li><li>Briefings after each sync, daily or weekly, with citations that open the articles</li><li>You set the limits on how much is translated and summarised unasked</li></ul></div><figure><div class="plate"><div class="label note-head">Editor’s note · Daily</div><div class="note-title">17 November</div><p>Of today’s 23 articles, the one to read is the new deep-sea archaeon<sup>[1]</sup>, fresh evidence that life began at hydrothermal vents<sup>[2]</sup>. On design, a long essay about measure and white space<sup>[3]</sup> rewards slow reading.</p></div><figcaption>A daily briefing; the numbers open the articles</figcaption></figure></section>
+<section class="feature plain"><div class="num">05</div><div><h2>Local first, private by default</h2><p>Everything works without an account, and then your data never leaves your device. There are no ads, no analytics and no tracking code.</p><ul><li>Back up to and restore from your own WebDAV server</li><li>An optional account syncs your feed list and starred articles across devices</li><li>Delete the account from inside the app at any time</li></ul></div></section>
+<section class="feature plain"><div class="num">06</div><div><h2>Pro, if you want more</h2><p>Reading, subscriptions, highlighting, backup and bring-your-own-key AI are free. An optional monthly Pro subscription adds what costs money to run.</p><ul><li>DawnRSS AI: translation and briefings with no API key to set up</li><li>Read aloud, in natural cloud voices</li><li>A daily report waiting for you at the time you choose</li><li>Background sync, and articles kept for good (free keeps unstarred articles for six months)</li></ul></div></section>
+
+<hr class="double-rule">
+<section class="closing">
+  <svg viewBox="0 0 100 63" aria-hidden="true"><path d="M14 36a36 36 0 0 1 72 0z"/><rect y="36" width="100" height="4.5"/><rect x="14" y="49" width="72" height="2.7"/><rect x="28" y="60.2" width="44" height="2.7"/></svg>
+  <h2>Hear the Way in the morning.</h2>
+  <p>DawnRSS is coming to Android first; iOS and the web version will follow.</p>
+  <div class="actions"><span class="button">Google Play — coming soon</span></div>
+</section>
+</main>
+
+<hr class="double-rule">
+<footer>
+  <span>© 2026 Heyu Lin</span>
+  <nav><a href="privacy/index.html">Privacy policy</a><a href="mailto:linheyu@outlook.com">Contact</a></nav>
+</footer>
+
+</div>
+</body>
+</html>

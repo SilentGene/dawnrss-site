@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DawnRSS Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; --paper: #F7F4EC; --ink: #1B1B1B; --soft: #6B675E; }
+  @media (prefers-color-scheme: dark) { :root { --paper: #121212; --ink: #E6E1D6; --soft: #9A958A; } }
+  body { margin: 0; background: var(--paper); color: var(--ink);
+         font: 17px/1.7 Georgia, "Noto Serif", "Noto Serif CJK SC", "Songti SC", serif; }
+  main { max-width: 680px; margin: 0 auto; padding: 40px 16px 80px; }
+  nav { font: 13px system-ui, sans-serif; color: var(--soft); margin-bottom: 28px; }
+  nav a { color: var(--soft); margin-right: 14px; }
+  h1 { font-weight: 400; line-height: 1.25; border-bottom: 1px solid var(--ink); padding-bottom: 14px; }
+  h2 { font-weight: 400; font-size: 1.3em; margin-top: 2em; }
+  ul { padding-left: 1.2em; }
+</style>
+</head>
+<body>
+<main>
+<nav><a href="../index.html">← DawnRSS</a><a href="index.html" lang="en">English</a> <a href="zh.html" lang="zh-Hans">简体中文</a> <a href="zh-Hant.html" lang="zh-Hant">繁體中文</a></nav>
+<h1>DawnRSS Privacy Policy</h1>
+<p>Effective date: 16 November 2026</p>
+<p>DawnRSS (&quot;the app&quot;) is developed and maintained by Heyu Lin, an independent developer (&quot;we&quot;, &quot;us&quot;). This policy explains what information the app handles, why, where it is kept, and what your rights are.</p>
+<h2>1. In short</h2>
+<p>DawnRSS is a local-first RSS reader:</p>
+<ul>
+<li>reading works fully without an account, and then your data stays on your device;</li>
+<li>an account is optional and is used only to sync starred articles and feeds, and for DawnRSS Pro;</li>
+<li>the app collects no analytics, telemetry or advertising data, and contains no third-party ads or trackers;</li>
+<li>we never sell, rent or trade any of your personal information.</li>
+</ul>
+<h2>2. What stays on your device</h2>
+<p>The following is stored only on your device, and we have no access to it:</p>
+<ul>
+<li>the feeds and groups you add, and the articles synced from them;</li>
+<li>reading state (read, starred), translations, and AI-written briefings;</li>
+<li>your settings, such as theme, language and keywords;</li>
+<li>API keys for AI services you set up yourself, and your WebDAV password, kept in the system&#x27;s secure storage (Android Keystore / iOS Keychain), never in backups and never sent to us;</li>
+<li>the app&#x27;s log: sync results and error messages, without article content, keys or passwords, and with feed addresses reduced to their host names. It is kept under about 256 KB; older entries are removed automatically.</li>
+</ul>
+<h2>3. What we keep if you create an account</h2>
+<p>If you create an account, our server keeps:</p>
+<ul>
+<li>account details: your email address, your password in hashed form (we cannot see it), and when you signed up and last signed in;</li>
+<li>starred articles: to sync them across your devices, the title, source, link, summary, body and translations of the articles you star are stored under your account, readable only by you; when you un-star an article, all that remains on the server is a marker without any content, to tell your other devices;</li>
+<li>your feed list: to sync it across your devices, the address of each feed you follow, the name you gave it and its group are stored under your account, readable only by you; when you unsubscribe, only the address and a marker remain;</li>
+<li>subscription record (Pro only): the Google Play purchase token, product and expiry date, to confirm your membership;</li>
+<li>usage record (Pro only): how many characters you sent to DawnRSS AI and how many seconds of read-aloud audio you used each day, for the daily and monthly fair-use limits — not the content itself.</li>
+</ul>
+<p>We do not store articles you have not starred, or your reading history (what is read or unread), on our server.</p>
+<h2>4. How Pro features handle your information</h2>
+<ul>
+<li>DawnRSS AI (translation and briefings): the titles, summaries or article text you ask to translate or summarise are passed through our server to Google&#x27;s Gemini API, and the result is returned to you. Our server does not keep this content. Under Google&#x27;s terms for paid use, Google does not use it to improve its products; it may keep it for a limited time to detect abuse.</li>
+<li>Read-aloud: the text to be read is passed through our server to Google&#x27;s Gemini API for speech synthesis; the audio comes straight back to your device, which keeps it only briefly while it plays.</li>
+<li>Payment: Google Play handles payment; we never see your card or payment details. To stop others claiming your subscription, each purchase carries a one-way tag derived from your account ID (a hash) — not your email address or the account itself.</li>
+</ul>
+<h2>5. Service providers we use</h2>
+<p>To provide these features we rely on the following providers, and give them only what they need:</p>
+<ul>
+<li>Supabase: accounts, database and server functions; stores the information in section 3.</li>
+<li>Google Play: subscription payments; we check subscription status through the Google Play Developer API.</li>
+<li>Google (Gemini API): language model and speech synthesis for Pro members.</li>
+</ul>
+<p>Their servers may be outside your country or region. We choose providers with appropriate safeguards and transfer only what is needed to provide the service.</p>
+<h2>6. Other third parties the app contacts directly</h2>
+<p>These connections are made directly from your device and do not involve us:</p>
+<ul>
+<li>syncing feeds, finding feeds and site icons, and showing images: the sites you subscribe to, which see your IP address and other details of an ordinary web request;</li>
+<li>an AI service you set up yourself: what you ask it to translate or summarise;</li>
+<li>a WebDAV server you set up yourself: the backup file (feeds, groups, starred articles in full, settings);</li>
+<li>the web version&#x27;s CORS proxy, if you enter one: the address of every feed you follow passes through it.</li>
+</ul>
+<p>Their own privacy policies govern how they handle what they receive.</p>
+<h2>7. What you choose to send us</h2>
+<ul>
+<li>Feedback: what you write is sent to our server (Supabase) with the app version and your device&#x27;s operating system. Your email address is included only if you enter it; when you are signed in, the feedback is linked to your account so we can reply. If it cannot be sent that way, your device&#x27;s email app sends it instead, and we will see your email address.</li>
+<li>Logs: sent through the app you pick when you choose to share them.</li>
+</ul>
+<p>We use these only to reply to you and improve the app, and do not pass them to anyone else unless the law requires it. Feedback is kept for at most a year after we have dealt with it.</p>
+<h2>8. How long we keep it, and deletion</h2>
+<ul>
+<li>Account data is kept until you delete your account. You can do so at any time under Settings → Account → Delete account; everything stored for the account on our server — the account, synced starred articles and feed list, subscription and usage records — is deleted at once.</li>
+<li>Deleting your account does not cancel a Google Play subscription; cancel it in the Play Store.</li>
+<li>Usage records serve the daily and monthly limits and are cleared out after about 40 days.</li>
+<li>Data on your device is deleted when you uninstall the app; backups on a WebDAV server are yours to delete there.</li>
+</ul>
+<h2>9. Permissions</h2>
+<ul>
+<li>Network: for the connections described above.</li>
+<li>Notifications (optional): requested only when you turn on &quot;Notify me about new articles&quot; or the daily report.</li>
+<li>Background work (optional): only when you turn on background sync or the daily report.</li>
+<li>Billing (Google Play): to buy the Pro subscription.</li>
+</ul>
+<h2>10. Children</h2>
+<p>The app is not directed at children under 13 (or the minimum age in your country), and we do not knowingly collect their personal information. If we learn that we have, we will delete it.</p>
+<h2>11. Your rights</h2>
+<p>You may access, correct, export and delete your personal information, and withdraw consent (for example by turning a feature off or deleting your account). Starred articles can be un-starred in the app at any time; feeds can be exported as OPML. To access or export the account data on our server, email us; we will answer within 30 days.</p>
+<h2>12. Changes</h2>
+<p>If this policy changes materially, we will update it before the new version is released and let you know in the app.</p>
+<h2>13. Contact</h2>
+<p>Developer: Heyu Lin</p>
+<p>Email: linheyu@outlook.com</p>
+</main>
+</body>
+</html>
